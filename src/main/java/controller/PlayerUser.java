@@ -13,19 +13,16 @@ public class PlayerUser {
         this.x = x;
     }
 
+
+    public int getY() {return y;}
     public void setY(int y) {
         this.y = y;
     }
 
     @Override
     public String toString() {
-        return "PlayerUser{" +
-                "x=" + x +
-                ", y=" + y +
-                '}';
+        return "User position: [" + x + "]["+ y +"]";
     }
 
-    public int getY() {
-        return y;
-    }
+
 }

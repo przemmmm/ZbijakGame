@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71bf2cf8-3a1c-4967-a647-13cb04f9aabb" name="Changes" comment="1 - Initial commit">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/MoveDown.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/MoveUp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/Movement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/Player1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/PlayerUser.java" afterDir="false" />
+    <list default="true" id="71bf2cf8-3a1c-4967-a647-13cb04f9aabb" name="Changes" comment="2 - dodano metody zmieniające pozycje w osi Y">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/ComputerMovement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/MoveLeft.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/MoveRight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/PositionControl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MoveDown.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MoveDown.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MoveUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MoveUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Movement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Movement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +23,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -54,6 +55,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/przem/OneDrive/Pulpit/SDA/HomePractice/RollTheDice/RollTheDice",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -61,6 +63,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="controller" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
@@ -89,7 +96,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1681936696030</updated>
-      <workItem from="1681936697312" duration="2931000" />
+      <workItem from="1681936697312" duration="3917000" />
+      <workItem from="1682018939103" duration="4900000" />
     </task>
     <task id="LOCAL-00001" summary="1 - Initial commit">
       <created>1681937509008</created>
@@ -98,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681937509008</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="2 - dodano metody zmieniające pozycje w osi Y">
+      <created>1681939836133</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1681939836133</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +121,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1 - Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="1 - Initial commit" />
+    <MESSAGE value="2 - dodano metody zmieniające pozycje w osi Y" />
+    <option name="LAST_COMMIT_MESSAGE" value="2 - dodano metody zmieniające pozycje w osi Y" />
   </component>
 </project>
