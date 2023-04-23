@@ -14,7 +14,6 @@ public class Main {
         int j = scanner.nextInt();
 
 
-
         PlayerUser user = new PlayerUser();
         user.setX(0);
         user.setY(0);
@@ -30,18 +29,12 @@ public class Main {
         PlayerComputer computer3 = new PlayerComputer("Computer3");
         computer3.setX(i);
         computer3.setY(0);
-//
-//        MoveUp moveUp = new MoveUp();
-//        MoveDown moveDown = new MoveDown();
-//        MoveLeft moveLeft = new MoveLeft();
-//        MoveRight moveRight = new MoveRight();
-        ComputerMove computerMove = new ComputerMove();
 
-//
-//
-//
+        ComputerMove computerMove = new ComputerMove();
+        UserMove userMove = new UserMove();
+
         System.out.println("******************************************");
-        System.out.println("WERYFIKUJEMY DZIALANY KLASY ZMIANY POZYCJI");
+        System.out.println("WERYFIKUJEMY DZIALANIE LOSOWEJ ZIANY POZYCJI DLA KOMPUTERA");
         System.out.println("******************************************");
 
         System.out.println(computer2);
@@ -50,85 +43,49 @@ public class Main {
         System.out.println(computer2);
         computerMove.computerMove(computer2, i,j);
 
+        System.out.println("******************************************");
+        System.out.println("WERYFIKUJEMY DZIALANY ZMIANY POZYCJI DLA GRACZA");
+        System.out.println("******************************************");
+
+        System.out.println(user);
+        userMove.playerMove(user, 'W');
+        System.out.println(user);
+        userMove.playerMove(user, 'W');
+        System.out.println(user);
+        userMove.playerMove(user, 'W');
+        System.out.println(user);
+        userMove.playerMove(user, 's');
+        System.out.println(user);
+        userMove.playerMove(user, 'a');
+        System.out.println(user);
+        userMove.playerMove(user, 'D');
+        System.out.println(user);
 
 
 
 
+        System.out.println("******************************************");
+        System.out.println("WERYFIKUJEMY DZIALANY MOVECONTROL DLA GRACZA");
+        System.out.println("******************************************");
 
+        System.out.println(user);
 
+        UserMoveControl userMoveControl = new UserMoveControl();
+        System.out.println(userMoveControl.moveControl(user, i, j, 'W'));
+        System.out.println(user);
+        System.out.println(userMoveControl.moveControl(user, i, j, 's'));
+        System.out.println(user);
+        System.out.println(userMoveControl.moveControl(user, i, j, 'a'));
+        System.out.println(user);
 
+        System.out.println(userMoveControl.moveControl(user, i, j, 'd'));
+        System.out.println(user);
 
+        System.out.println(userMoveControl.moveControl(user, i, j, 'w'));
+        System.out.println(user);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //KONTROLA MOZLIWYCH RUCHOW. SPRAWDZAMY NA JAKIM POLU JEST KOMPUTER I W KTORYM KIEURNU MOZE ISC
-        // najpierw randomym losujemy mu kierunek
-        //potem sprawdzamy, czy moze pojsc w tym kierunku
-        //jesli nie to odwracamy kierunek
-        //do metody zaciagamy caly obiekt
-
-
-
-
-
-
-
-
-        // TU BEDZIE METODA, KTORA BEDZIE POBIERAC ZNAK Z KLAWIATURY I NA JEJ PODSTAWIE BEDZIE ZMIENIAC POZYCJE GRACZA
-//        System.out.println(user);
-//        System.out.println("WYBIERZ KIERUNEK: \n" +
-//                "W. DO GÓRY. \n" +
-//                "S. NA DOŁ. \n" +
-//                "A. W LEWO. \n" +
-//                "D. W PRAWO. \n");
-
-       // char moveDirection = scanner.next().charAt(0);
-
-//        switch(Character.toUpperCase(moveDirection)){
-//            case 'W' : user.setY(moveUp.move(user.getY()));
-//            break;
-//            case 'S' : user.setY(moveDown.move(user.getY()));
-//            break;
-//            case 'A' : user.setX(moveLeft.move(user.getX()));
-//            break;
-//            case 'D' : user.setX(moveRight.move(user.getX()));
-//            break;
-//            default:
-//                System.out.println("Nie ma takiego kierunku");
-//                break;
-//        }
-
-
-//
-//        System.out.println(user);
-//        user.setY(moveUp.move(user.getY()));
-//        System.out.println(user);
-//        user.setY(moveUp.move(user.getY()));
-//        System.out.println(user);
-//        user.setX(moveLeft.move(user.getX()));
-//        System.out.println(user);
-
-
-
-
-
-
-
+        System.out.println(userMoveControl.moveControl(user, i, j, 's'));
+        System.out.println(user);
 
 
 
