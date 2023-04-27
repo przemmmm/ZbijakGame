@@ -1,5 +1,6 @@
-package computerController;
+package moveController;
 
+import computerController.ComputerMovement;
 import controller.PlayerComputer;
 
 public class ComputerMoveDown extends ComputerMovement {

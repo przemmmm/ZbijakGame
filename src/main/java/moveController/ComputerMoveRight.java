@@ -1,8 +1,9 @@
-package computerController;
+package moveController;
 
+import computerController.ComputerMovement;
 import controller.PlayerComputer;
 
-public class ComputerMoveRight extends ComputerMovement{
+public class ComputerMoveRight extends ComputerMovement {
     @Override
     public PlayerComputer move(PlayerComputer player) {
 

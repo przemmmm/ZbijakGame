@@ -1,4 +1,4 @@
-package computerController;
+package moveController;
 
 import controller.PlayerComputer;
 
@@ -16,31 +16,31 @@ public class ComputerMove {
     public PlayerComputer computerMove(PlayerComputer player, int boardMaxX, int boardMaxY) {
 
         Random rnd = new Random();
-        int moveDirection = rnd.nextInt(4);
+        int moveDirection = rnd.nextInt(4); //do sprawdzenia jaki zakres losuje
 
         switch (moveDirection) {
-            case 0:
+            case 0 -> {
                 if (player.getY() == boardMaxY) {
                     computerMoveDown.move(player);
                 } else computerMoveUp.move(player);
-                break;
-            case 1:
+            }
+            case 1 -> {
                 if (player.getY() == 0) {
                     computerMoveUp.move(player);
                 } else computerMoveDown.move(player);
-                break;
-
-            case 2:
+            }
+            case 2 -> {
                 if (player.getX() == 0) {
                     computerMoveRight.move(player);
                 } else computerMoveLeft.move(player);
-                break;
-            case 3:
+            }
+            case 3 -> {
                 if (player.getX() == boardMaxX) {
                     computerMoveLeft.move(player);
                 } else computerMoveRight.move(player);
-                break;
-            default:
+            }
+            default -> {
+            }
         }
         return player;
     }

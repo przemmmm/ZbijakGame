@@ -5,6 +5,8 @@ public class PlayerUser {
     int x;
     int y;
 
+    boolean status = true;
+
     public int getX() {
         return x;
     }
@@ -18,6 +20,10 @@ public class PlayerUser {
     public void setY(int y) {
         this.y = y;
     }
+
+    public boolean getStatus() {return status;}
+
+    public void setStatus(boolean status) { this.status = status;}
 
     @Override
     public String toString() {

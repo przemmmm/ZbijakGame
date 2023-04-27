@@ -1,4 +1,4 @@
-package controller;
+package moveController;
 
 public class MoveUp extends Movement {
 

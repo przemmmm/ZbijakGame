@@ -1,13 +1,12 @@
 package org.example;
 
-import computerController.*;
 import controller.*;
+import moveController.ComputerMove;
 
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static <Set> void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
         int i = scanner.nextInt();
@@ -30,6 +29,15 @@ public class Main {
         computer3.setX(i);
         computer3.setY(0);
 
+       HashSet<PlayerComputer> enemyList = new LinkedHashSet<>();
+       enemyList.add(computer1);
+       enemyList.add(computer2);
+       enemyList.add(computer3);
+
+        System.out.println("WERYFIKACJA WYSWIETLANIA LISTY");
+       enemyList.forEach(System.out::println);
+
+
         ComputerMove computerMove = new ComputerMove();
         UserMove userMove = new UserMove();
 
@@ -42,25 +50,6 @@ public class Main {
         computerMove.computerMove(computer2, i,j);
         System.out.println(computer2);
         computerMove.computerMove(computer2, i,j);
-
-        System.out.println("******************************************");
-        System.out.println("WERYFIKUJEMY DZIALANY ZMIANY POZYCJI DLA GRACZA");
-        System.out.println("******************************************");
-
-        System.out.println(user);
-        userMove.playerMove(user, 'W');
-        System.out.println(user);
-        userMove.playerMove(user, 'W');
-        System.out.println(user);
-        userMove.playerMove(user, 'W');
-        System.out.println(user);
-        userMove.playerMove(user, 's');
-        System.out.println(user);
-        userMove.playerMove(user, 'a');
-        System.out.println(user);
-        userMove.playerMove(user, 'D');
-        System.out.println(user);
-
 
 
 
@@ -87,6 +76,20 @@ public class Main {
         System.out.println(userMoveControl.moveControl(user, i, j, 's'));
         System.out.println(user);
 
+
+        System.out.println("*******WERYFIKACJA USUNIECIA Z SETU****************");
+        enemyList.forEach(System.out::println);
+
+//        MattingVerification mattedVerification = new MattingVerification();
+//        mattedVerification.removeFromSet(enemyList, computer2);
+//        System.out.println("PO USUNIECIU");
+//        enemyList.forEach(System.out::println);
+
+
+        System.out.println("*******WERYFIKACJA czy  komputer zostal zbity****************");
+
+        MattingVerification mattingVerification = new MattingVerification();
+        mattingVerification.isEnemyMatted(user, computer1, computer2, computer3, enemyList );
 
 
     }

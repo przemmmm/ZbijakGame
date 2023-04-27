@@ -1,5 +1,10 @@
 package controller;
 
+import moveController.MoveDown;
+import moveController.MoveLeft;
+import moveController.MoveRight;
+import moveController.MoveUp;
+
 public class UserMoveControl {
 
     PlayerUser player = new PlayerUser();
