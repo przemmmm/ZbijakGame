@@ -1,11 +1,16 @@
-package controller;
+package players;
 
 public class PlayerUser {
 
     int x;
     int y;
 
-    boolean status = true;
+    public PlayerUser(){};
+    public PlayerUser(int x, int y){
+        this.x = x;
+        this.y = y;
+    }
+    boolean status = true; //to verify if user is matted or not. True - not matted, false - matted.
 
     public int getX() {
         return x;

@@ -1,6 +1,6 @@
 package moveController;
 
-import controller.PlayerComputer;
+import players.PlayerComputer;
 
 import java.util.Random;
 
@@ -44,4 +44,6 @@ public class ComputerMove {
         }
         return player;
     }
+
+
 }

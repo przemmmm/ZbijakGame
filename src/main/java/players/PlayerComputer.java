@@ -1,4 +1,4 @@
-package controller;
+package players;
 
 public class PlayerComputer {
 
@@ -8,15 +8,13 @@ public class PlayerComputer {
 
     public PlayerComputer(String name){
         this.name = name;
+        this.x = x;
+        this.y = y;
     }
-
-
 
     public int getX() {
         return x;
     }
-
-
 
     public void setX(int x) {
         this.x = x;
@@ -30,21 +28,17 @@ public class PlayerComputer {
         return y;
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         return
                 name +" position: [" + x + "]["+ y +"]";
     }
 
-
-//    @Override
-//    public String toString() {
-//        return "PlayerComputer{" +
-//                "name='" + name + '\'' +
-//                ", x=" + x +
-//                ", y=" + y +
-//                '}';
-    }
+}
 
 
 

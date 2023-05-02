@@ -1,7 +1,7 @@
 package moveController;
 
 import computerController.ComputerMovement;
-import controller.PlayerComputer;
+import players.PlayerComputer;
 
 public class ComputerMoveDown extends ComputerMovement {
     @Override

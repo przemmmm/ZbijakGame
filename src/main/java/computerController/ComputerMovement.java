@@ -1,6 +1,6 @@
 package computerController;
 
-import controller.PlayerComputer;
+import players.PlayerComputer;
 
 public abstract class ComputerMovement {
 
