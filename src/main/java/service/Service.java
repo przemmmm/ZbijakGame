@@ -6,13 +6,16 @@ import moveController.ComputerMove;
 import players.PlayerComputer;
 import players.PlayerUser;
 
+import java.sql.SQLOutput;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Scanner;
 
 public class Service {
 
+    String userPrompting;
     int boardSize;
+    boolean userPromptCheck = true;
     Scanner scanner = new Scanner(System.in);
     PlayerUser user = new PlayerUser(0, 0);
     PlayerComputer computer1 = new PlayerComputer("Computer1");
@@ -26,11 +29,28 @@ public class Service {
     MattingVerification mattingVerification = new MattingVerification();
 
     public int createPlayingBoard() {
-        System.out.println("Podaj wymiar tablicy. Tablica jest kwadratowa, więc potrzebujemy tylko jednej wartosci: ");
+        System.out.println("\t\t\t WITAMY W GRZE W ZBIJAKA.");
+        System.out.println("\t\t\t ***********************.");
+        System.out.println("Podaj wymiar tablicy, na ktorej odbedzie sie gra,. Tablica jest kwadratowa, więc potrzebujemy tylko jednej wartosci. " +
+                " \nWartośc musi byc większa od 3. Najlepiej, zeby byla niemniesza niz 5. ");
+        System.out.println();
         System.out.print("Wymiar: ");
-        boardSize = scanner.nextInt();
+        while (userPromptCheck) {
+            try {
+                userPrompting = scanner.nextLine();
+                boardSize=Integer.parseInt(userPrompting);
+                if(boardSize>=3) {
+                    System.out.println("Plansza gotowa! Możemy zaczynać!");
+                    userPromptCheck=false;
+                }
 
-        return boardSize;
+                else System.out.println("Podałeś wartośc mniejszą od 3. Taka gra nie ma sensu.!");
+
+            } catch (NumberFormatException e) {
+                System.out.println("Podana wartość nie jest liczbą! Podaj prosze jeszcze raz!");
+
+            }
+        }return boardSize;
     }
 
     public void startGame() {

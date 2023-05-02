@@ -53,6 +53,9 @@ public class UserMoveControl {
                 }
                 break;
 
+            default:
+               notification= "Nie ma tekigo wyboru. Tracisz kolejke.";
+
         }
        return notification;
     }
