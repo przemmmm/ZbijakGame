@@ -32,7 +32,7 @@ public class PlayerUser {
 
     @Override
     public String toString() {
-        return "User position: [" + x + "]["+ y +"]";
+        return "[" + x + "]["+ y +"]";
     }
 
 

@@ -17,46 +17,64 @@ public class UserMoveControl {
     MoveLeft moveLeft = new MoveLeft();
     MoveRight moveRight = new MoveRight();
 
-    public String moveControl(PlayerUser player, int boardMaxX, int boardMaxY, char playersChoice) {
+    public boolean moveControl(PlayerUser player, int boardMaxX, int boardMaxY, char playersChoice) {
 
-        String notification = null;
+        boolean isChoiceCorrect = true;
+
 
         switch (Character.toUpperCase(playersChoice)) {
             case 'W':
                 if ((player.getY()) == boardMaxY) {
-                    notification = "Nie mozesz isc do gory bo wyjdzisz poza plansze! Tracisz ruch. ";
+                    System.out.print("Nie mozesz isc do gory bo wyjdzisz poza plansze! ");
+                    isChoiceCorrect = false;
                 } else {
-                    notification = "Wykonaleś ruch do góry.";
-                            player.setY(moveUp.move(player.getY()));}
+                    player.setY(moveUp.move(player.getY()));
+                    System.out.println("Wykonaleś ruch do góry.");
+                    System.out.println("Twoja pozycja: " + player);
+                    //isChoiceCorrect = true;
+
+                }
                 break;
             case 'S':
                 if ((player.getY()) == 0) {
-                    notification = "Nie mozesz isc w dół bo wyjdzisz poza plansze! Tracisz ruch.";
+                    System.out.print("Nie mozesz isc w dół bo wyjdzisz poza plansze! ");
+                    isChoiceCorrect = false;
                 } else {
-                    notification = "Wykonałeś ruch w dół";
-                    player.setY(moveDown.move(player.getY()));}
+                    player.setY(moveDown.move(player.getY()));
+                    System.out.println("Wykonałeś ruch w dół.");
+                    System.out.println("Twoja pozycja: " + player);
+                    //isChoiceCorrect = true;
+                   }
+
                 break;
             case 'A':
                 if ((player.getX()) == 0) {
-                    notification = "Nie mozesz isc w lewo bo wyjdzisz poza plansze! Tracisz ruch.";
+                    System.out.print("Nie mozesz isc w lewo bo wyjdzisz poza plansze! ");
+                    isChoiceCorrect = false;
                 } else{
-                    notification = "Wykonałeś ruch w lewo.";
                     player.setX(moveLeft.move(player.getX()));
+                    System.out.println("Wykonałeś ruch w lewo.");
+                    System.out.println("Twoja pozycja: " + player);
+                   // isChoiceCorrect = true;
                 }
                 break;
             case 'D':
                 if ((player.getX()) == boardMaxX) {
-                    notification = "Nie mozesz isc w prawo bo wyjdzisz poza plansze! Tracisz ruch.";
+                    System.out.print("Nie mozesz isc w prawo bo wyjdzisz poza plansze! ");
+                    isChoiceCorrect = false;
                 } else {
-                    notification = "Wykonałeś ruch w prawo.";
                     player.setX(moveRight.move(player.getX()));
+                    System.out.println("Wykonałeś ruch w prawo.");
+                    System.out.println("Twoja pozycja: " + player);
+                    //isChoiceCorrect = true;
                 }
                 break;
 
             default:
-               notification= "Nie ma tekigo wyboru. Tracisz kolejke.";
+                System.out.print("Nie ma tekigo wyboru. ");
+                isChoiceCorrect = false;
 
         }
-       return notification;
+        return isChoiceCorrect;
     }
 }

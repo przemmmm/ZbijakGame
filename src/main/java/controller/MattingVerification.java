@@ -16,7 +16,7 @@ public class MattingVerification {
             computer.getX();
             computer.getY();
             if (playerUser.getX() == computer.getX() && playerUser.getY() == computer.getY()) {
-                System.out.println("Brawo! Właśnie zbileś gracza " + computer.getName());
+                System.out.println("BRAWO! WŁAŚNIE ZBIŁEŚ GRACZA  " + computer.getName());
                 temporaryEnemyList.add(computer);
             }
         } return temporaryEnemyList;
@@ -25,7 +25,7 @@ public class MattingVerification {
     public PlayerUser isUserMatted(PlayerUser user, PlayerComputer currentComputer) {
 
         if(currentComputer.getX()==user.getX() && currentComputer.getY()==user.getY()){
-            System.out.println("ZOSTALES ZBITY PRZEZ GRACZA: " + currentComputer.getName());
+            System.out.println("ZOSTALES ZBITY PRZEZ GRACZA " + currentComputer.getName());
                 user.setStatus(false);
 
         } return user;

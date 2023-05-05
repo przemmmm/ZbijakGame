@@ -6,7 +6,6 @@ import moveController.ComputerMove;
 import players.PlayerComputer;
 import players.PlayerUser;
 
-import java.sql.SQLOutput;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Scanner;
@@ -26,6 +25,7 @@ public class Service {
 
 
     UserMoveControl userMoveControl = new UserMoveControl();
+
     MattingVerification mattingVerification = new MattingVerification();
 
     public int createPlayingBoard() {
@@ -72,37 +72,41 @@ public class Service {
         do {
             System.out.println("**************************************" + " \n\t\t\tRUNDA NUMER: " + counter);
 
-            System.out.print("Wykonaj swój ruch: ");
-            char userMove = scanner.next().charAt(0);
-            System.out.println(userMoveControl.moveControl(user, boardSize, boardSize, userMove));
-            System.out.println("Twoja pozycja: " + user);
-
+            char userMove;  // musze wyczyścic scanner, bo mi ponownie pobiera wartość
+            boolean isCorrect;
+            do {
+                System.out.print("Wykonaj swój ruch: ");
+                userMove = scanner.next().charAt(0);
+                isCorrect = userMoveControl.moveControl(user, boardSize, boardSize, userMove);
+                if (isCorrect) {
+                    break;
+                }
+            } while (!(isCorrect));
 
             enemyList.removeAll(mattingVerification.isEnemyMatted(user, enemyList));
             //tu mam metode, ktora przy pomocy dodatkowej listy zmienia mi istniejąca tabele. Gdy tego nie mialem to waywalo mi CurrentModificationException
-            if (enemyList.isEmpty() == true) {
+            if (enemyList.isEmpty()) {
                 break;
             }
 
             for (PlayerComputer playerComputer : enemyList) {
                 computerMove.computerMove(playerComputer, boardSize, boardSize);
-                System.out.println(playerComputer);
+                //System.out.println(playerComputer);
                 mattingVerification.isUserMatted(user, playerComputer);
-                if (user.getStatus() == false) {
+                if (!user.getStatus()) {
                     break;
                 }
             }
 
             counter++;
 
-
-        } while (user.getStatus() == true && enemyList.size() != 0);
+        } while (user.getStatus() && enemyList.size() != 0);
         if (enemyList.size() == 0) {
-            System.out.println("WYGRAŁEŚ!" + "\n Zbiłeś wszystkich przeciwników w " + (counter - 1) + " ruchach!");
+            System.out.println("KONIEC GRY - WYGRAŁEŚ!" + "\n Zbiłeś wszystkich przeciwników w " + (counter - 1) + " ruchach!");
 
         }
-        if (user.getStatus() == false) {
-            System.out.println("PRZEGRAŁEŚ!" +
+        if (!user.getStatus()) {
+            System.out.println("KONIEC GRY! PRZEGRAŁEŚ! \n " +
                     "Zostałeś zbity w " + (counter - 1) + " ruchach!");
         }
     }

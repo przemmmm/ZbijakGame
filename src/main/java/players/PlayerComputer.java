@@ -35,7 +35,7 @@ public class PlayerComputer {
     @Override
     public String toString() {
         return
-                name +" position: [" + x + "]["+ y +"]";
+                name +"[" + x + "]["+ y +"]";
     }
 
 }
