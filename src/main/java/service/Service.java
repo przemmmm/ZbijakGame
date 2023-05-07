@@ -23,18 +23,13 @@ public class Service {
     HashSet<PlayerComputer> enemyList = new LinkedHashSet<>();
     ComputerMove computerMove = new ComputerMove();
 
-
     UserMoveControl userMoveControl = new UserMoveControl();
-
     MattingVerification mattingVerification = new MattingVerification();
 
     public int createPlayingBoard() {
-        System.out.println("\t\t\t WITAMY W GRZE W ZBIJAKA.");
-        System.out.println("\t\t\t ***********************.");
-        System.out.println("Podaj wymiar tablicy, na ktorej odbedzie sie gra,. Tablica jest kwadratowa, więc potrzebujemy tylko jednej wartosci. " +
-                " \nWartośc musi byc większa od 3. Najlepiej, zeby byla niemniesza niz 5. ");
-        System.out.println();
-        System.out.print("Wymiar: ");
+
+        System.out.println("Podaj wymiar tablicy, na ktorej odbedzie sie gra: ");
+        userPromptCheck=true;
         while (userPromptCheck) {
             try {
                 userPrompting = scanner.nextLine();
@@ -55,6 +50,8 @@ public class Service {
 
     public void startGame() {
 
+        enemyList.clear();
+
         createPlayingBoard();
 
         computer1.setX(boardSize);
@@ -68,11 +65,10 @@ public class Service {
         enemyList.add(computer3);
         int counter = 1;
 
-
         do {
             System.out.println("**************************************" + " \n\t\t\tRUNDA NUMER: " + counter);
 
-            char userMove;  // musze wyczyścic scanner, bo mi ponownie pobiera wartość
+            char userMove;
             boolean isCorrect;
             do {
                 System.out.print("Wykonaj swój ruch: ");
@@ -91,7 +87,7 @@ public class Service {
 
             for (PlayerComputer playerComputer : enemyList) {
                 computerMove.computerMove(playerComputer, boardSize, boardSize);
-                //System.out.println(playerComputer);
+//                System.out.println(playerComputer);
                 mattingVerification.isUserMatted(user, playerComputer);
                 if (!user.getStatus()) {
                     break;
@@ -106,7 +102,7 @@ public class Service {
 
         }
         if (!user.getStatus()) {
-            System.out.println("KONIEC GRY! PRZEGRAŁEŚ! \n " +
+            System.out.println("\t KONIEC GRY! PRZEGRAŁEŚ! \n" +
                     "Zostałeś zbity w " + (counter - 1) + " ruchach!");
         }
     }
