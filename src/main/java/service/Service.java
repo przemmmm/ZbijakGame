@@ -28,8 +28,10 @@ public class Service {
 
     public int createPlayingBoard() {
 
+
         System.out.println("Podaj wymiar tablicy, na ktorej odbedzie sie gra: ");
         userPromptCheck=true;
+        userPrompting= null;
         while (userPromptCheck) {
             try {
                 userPrompting = scanner.nextLine();
@@ -38,11 +40,10 @@ public class Service {
                     System.out.println("Plansza gotowa! Możemy zaczynać!");
                     userPromptCheck=false;
                 }
-
                 else System.out.println("Podałeś wartośc mniejszą od 3. Taka gra nie ma sensu.!");
 
             } catch (NumberFormatException e) {
-                System.out.println("Podana wartość nie jest liczbą! Podaj prosze jeszcze raz!");
+                System.out.println("Podana wartość nie jest liczbą! Podaj prosze jeszcze raz!: ");
 
             }
         }return boardSize;
@@ -51,6 +52,9 @@ public class Service {
     public void startGame() {
 
         enemyList.clear();
+        user.setStatus(true);
+        user.setX(0);
+        user.setY(0);
 
         createPlayingBoard();
 
@@ -87,7 +91,7 @@ public class Service {
 
             for (PlayerComputer playerComputer : enemyList) {
                 computerMove.computerMove(playerComputer, boardSize, boardSize);
-//                System.out.println(playerComputer);
+                System.out.println(playerComputer);
                 mattingVerification.isUserMatted(user, playerComputer);
                 if (!user.getStatus()) {
                     break;

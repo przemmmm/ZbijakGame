@@ -29,7 +29,7 @@ public class PlayerComputer {
     @Override
     public String toString() {
         return
-                name +"[" + x + "]["+ y +"]";
+                "Pozycja gracza "+ name +": [" + x + "]["+ y +"]";
     }
 
 }
